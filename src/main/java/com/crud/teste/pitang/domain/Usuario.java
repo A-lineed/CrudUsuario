@@ -2,13 +2,21 @@ package com.crud.teste.pitang.domain;
 
 public class Usuario {
 
-	private Integer idUsuario;
+	private Integer id;
 	private String nome;
 	private String email;
 	private String senha;
 	private Integer ddd;
 	private Integer numero;
 	private String tipo;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;

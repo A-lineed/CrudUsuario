@@ -16,7 +16,7 @@ public class UsuarioDao {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");	
-			conexao=DriverManager.getConnection("jdbc:mysql://localhost:3306/crudtestepitang", "root", "85850219" );
+			conexao=DriverManager.getConnection("jdbc:mysql://localhost:3306/crudtestepitang", "root", "" );
 			}catch (Exception e) {
 				System.out.println(e);
 				
@@ -34,6 +34,7 @@ public class UsuarioDao {
 				
 				while(rs.next()) {
 					Usuario usuario = new Usuario();
+					usuario.setId(rs.getInt("id"));
 					usuario.setNome(rs.getString("nome"));
 					usuario.setEmail(rs.getString("email"));
 					usuario.setSenha(rs.getString("senha"));
