@@ -7,8 +7,7 @@
 <title>Visualização de Usuários</title>
 </head>
 <body>
-	<%@ page
-		import="com.crud.teste.pitang.dao.UsuarioDao , com.crud.teste.pitang.domain.* , java.util.*"%>
+	<%@ page import="com.crud.teste.pitang.dao.UsuarioDao , com.crud.teste.pitang.domain.* , java.util.*"%>
 	<%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<h1>Listagem de Usuários</h1>
@@ -20,7 +19,15 @@
 
 	<table border="1">
 		<tr>
-			<th>Id</th><th>Nome</th><th>Email</th><th>Senha</th><th>DDD</th><th>Numero</th><th>Tipo</th>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Senha</th>
+			<th>DDD</th>
+			<th>Numero</th>
+			<th>Tipo</th>
+			<th>Editar</th>
+			<th>Excluir</th>
 		</tr>
 
 		<c:forEach items="${list}" var="usuario">
@@ -32,8 +39,12 @@
 				<td>${usuario.getDdd()}</td>
 				<td>${usuario.getNumero()}</td>
 				<td>${usuario.getTipo()}</td>
+				<td><a href="editar-form.jsp?id=${usuario.getId()}"> Editar</a></td>
+				<td><a href="#">Excluir</a></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<br>
+	<a href="#">Adicionar novo usuário</a>
 </body>
 </html>
