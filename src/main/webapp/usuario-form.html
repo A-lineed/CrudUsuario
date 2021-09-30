@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastrar usuario</title>
+</head>
+<body>
+
+<h1>Cadastrar novo usuário</h1>
+
+<form action="add-usuario.jsp" method="post">
+		
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><input type="text" name="nome"/></td>
+			</tr>
+			<tr>
+				<td>E-mail:</td>
+				<td><input type="email" name="email"/></td>
+			</tr>
+			<tr>
+				<td>Senha:</td>
+				<td><input type="password" name="senha" /></td>
+			</tr>
+			<tr>
+				<td>DDD: </td>
+				<td>
+				<select name="ddd">
+						<option>65</option>
+						<option>66</option>
+						<option>67</option>
+						<option>68</option>
+						<option>81</option>
+						<option>Outro</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Numero:</td>
+				<td><input type="number" name="numero" /></td>
+			</tr>
+			<tr>
+				<td>Tipo </td>
+				<td>
+				<select name="tipo">
+						<option>Oi</option>
+						<option>Tim</option>
+						<option>Claro</option>
+						<option>Vivo</option>
+						<option>Outro</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<input type="submit" value="Adicionar usuário"></input>
+				</td>
+			</tr>
+		</table>
+ 
+	</form>
+
+
+
+</body>
+</html>
