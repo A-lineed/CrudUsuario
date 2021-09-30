@@ -40,7 +40,7 @@
 				<td>${usuario.getNumero()}</td>
 				<td>${usuario.getTipo()}</td>
 				<td><a href="editar-form.jsp?id=${usuario.getId()}"> Editar</a></td>
-				<td><a href="#">Excluir</a></td>
+				<td><a href="delete-usuario.jsp?id=${usuario.getId()}">Excluir</a></td>
 			</tr>
 		</c:forEach>
 	</table>
