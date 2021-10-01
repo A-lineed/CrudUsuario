@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Visualização de Usuários</title>
+<title>Visualização dos usuários</title>
 </head>
 <body>
 	<%@ page
@@ -38,8 +38,8 @@
 			<th>DDD</th>
 			<th>Numero</th>
 			<th>Tipo</th>
-			<th>Editar</th>
-			<th>Excluir</th>
+			<th>Alterar</th>
+			<th>Remover</th>
 		</tr>
 
 		<c:forEach items="${list}" var="usuario">
@@ -51,13 +51,13 @@
 				<td>${usuario.getDdd()}</td>
 				<td>${usuario.getNumero()}</td>
 				<td>${usuario.getTipo()}</td>
-				<td><a href="editar-form.jsp?id=${usuario.getId()}"> Editar</a></td>
-				<td><a href="delete-usuario.jsp?id=${usuario.getId()}">Excluir</a></td>
+				<td><a href="editar-form.jsp?id=${usuario.getId()}">Alterar</a></td>
+				<td><a href="delete-usuario.jsp?id=${usuario.getId()}">Remover</a></td>
 			</tr>
 		</c:forEach>
 	</table>
 	<br>
-	<button><a href="add-usuario-form.jsp">Adicionar novo usuário</a></button>
+	<button><a href="add-usuario-form.jsp">Incluir usuário</a></button>
 	<button><a href="deslogar.jsp">Deslogar</a></button>
 </body>
 </html>
