@@ -7,15 +7,27 @@
 <title>Visualização de Usuários</title>
 </head>
 <body>
-	<%@ page import="com.crud.teste.pitang.dao.UsuarioDao , com.crud.teste.pitang.domain.* , java.util.*"%>
+	<%@ page
+		import="com.crud.teste.pitang.dao.UsuarioDao , com.crud.teste.pitang.domain.* , java.util.*"%>
 	<%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<h1>Listagem de Usuários</h1>
 
 	<%
+	String usuario = (String) session.getAttribute("usuario");
+	if (usuario == null) {
+		response.sendRedirect("index.jsp");
+	} else {
+		out.print("Bem vinde, " + usuario + " aqui você pode cadastrar, editar e excluir um usuário.<br/>");
+	}
+	%>
+
+<br/>
+	<%
 	List<Usuario> list = UsuarioDao.getAllUsuarios();
 	request.setAttribute("list", list);
 	%>
+
 
 	<table border="1">
 		<tr>
@@ -45,6 +57,7 @@
 		</c:forEach>
 	</table>
 	<br>
-	<a href="add-usuario-form.jsp">Adicionar novo usuário</a>
+	<button><a href="add-usuario-form.jsp">Adicionar novo usuário</a></button>
+	<button><a href="deslogar.jsp">Deslogar</a></button>
 </body>
 </html>
